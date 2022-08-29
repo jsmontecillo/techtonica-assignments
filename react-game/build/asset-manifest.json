@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/techtonica-assignments/static/css/main.141b6486.css",
+    "main.js": "/techtonica-assignments/static/js/main.8994d448.js",
+    "static/js/787.5dbb482b.chunk.js": "/techtonica-assignments/static/js/787.5dbb482b.chunk.js",
+    "static/media/background.gif": "/techtonica-assignments/static/media/background.82377af6f73d1ca14945.gif",
+    "static/media/jumpscare.gif": "/techtonica-assignments/static/media/jumpscare.4703b14b081f90828da7.gif",
+    "static/media/pizza.png": "/techtonica-assignments/static/media/pizza.696949255970a49138bf.png",
+    "static/media/mouth.gif": "/techtonica-assignments/static/media/mouth.5010df4eb85f6911c2df.gif",
+    "index.html": "/techtonica-assignments/index.html",
+    "main.141b6486.css.map": "/techtonica-assignments/static/css/main.141b6486.css.map",
+    "main.8994d448.js.map": "/techtonica-assignments/static/js/main.8994d448.js.map",
+    "787.5dbb482b.chunk.js.map": "/techtonica-assignments/static/js/787.5dbb482b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.141b6486.css",
+    "static/js/main.8994d448.js"
+  ]
+}
