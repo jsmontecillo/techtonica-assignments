@@ -1,0 +1,271 @@
+body {
+    background-color:rgb(219, 216, 216);
+    background-image: url(wallpaper.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Space Mono', monospace;
+    border: 0;
+    margin: 0;
+}
+
+span {
+    float: right;
+    margin-right: 15px;
+    color: white;
+}
+
+#navigation a {
+    margin-right: 15px;
+    margin-left: 5px;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    background-color: white;
+    color: rgb(138, 137, 137);
+    padding: 6px;
+    opacity: 0.5;
+    transition: 0.5s ease;
+}
+
+.project-link {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+
+iframe {
+    margin-bottom: 10px;
+}
+
+.project {
+    margin-top: -8px;
+    margin-left: 10px;
+}
+
+form {
+    margin-top: 3px;
+    padding: 10px;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%
+}
+
+button {
+    margin-top: 15px;
+    margin-left: 40%;
+}
+
+#navigation {
+    height: 20px;
+    border-radius: 3px;
+    padding: 5px;
+    width: 100%;
+    margin: 0;
+    background-color: #1e5ee6;
+    border-bottom:15px rgb(138, 137, 137);
+    font-size: 13px;
+}
+
+#icon-group {
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+#janice-photo {
+    border-radius: 50%;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.folder-icon {
+    height: 70px;
+    margin-bottom: -10px;
+}
+
+.folder-names {
+    font-size: 12px;
+    text-align: center;
+    line-height: 0px;
+    text-shadow:rgba(0, 0, 0, 0.2);
+}
+
+.sections {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
+}
+
+.folder-nav {
+    text-align: center;
+    width: 100%;
+    background-color: #f3f1f8;
+    font-size: 13px;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 0;
+}
+
+.first-folder-on {
+    z-index: 0;
+    position: absolute;
+    height: 400px;
+    width: 600px;
+    padding: 0;
+    border: 7px black;
+    border-radius: 15px;
+    background-color:#ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+    overflow: scroll;
+}
+
+.second-folder-on {
+    z-index: 1;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 500px;
+    height: 440px;
+    width: 300px;
+    padding: 0px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+    overflow: scroll;
+}
+
+.third-folder-on {
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 5%;
+    z-index: 2;
+    height: 400px;
+    width: 400px;
+    padding: 0px;
+    border-radius: 15px;
+    background-color:#ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+    overflow: scroll;
+}
+
+.fourth-folder-on {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 450px;
+    z-index: 2;
+    height: 150px;
+    width: 400px;
+    padding: 0px;
+    border-radius: 15px;
+    background-color:#ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.5s;
+    overflow: scroll;
+}
+
+.tab-text {
+    padding: 15px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+}
+
+.tab-description {
+    position: absolute;
+    margin-top: -90px;
+    padding: 20px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    text-align: right;
+}
+
+.folder-off {
+    display:none;
+}
+
+@media screen and (max-width: 375px){
+    body {
+        background-image: url(background.jpg_large);
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .folder-icon {
+        height: 80px;
+    }
+
+    #janice-photo {
+        border-radius: 50%;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+
+    .first-folder-on {
+        z-index: 0;
+        position: absolute;
+        height: 430px;
+        width: 230px;
+        margin-left: -60px;
+        padding: 0;
+        border: 7px black;
+        border-radius: 15px;
+        background-color:#ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.5s;
+        overflow: scroll;
+    }
+
+    .second-folder-on {
+        z-index: 1;
+        position: absolute;
+        margin-top: 0px;
+        margin-left: -60px;
+        height: 430px;
+        width: 230px;
+        padding: 0px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.5s;
+        overflow: scroll;
+    }
+
+    .third-folder-on {
+        position: absolute;
+        margin-left: -60px;
+        margin-top: 0;
+        z-index: 2;
+        height: 430px;
+        width: 230px;
+        padding: 0px;
+        border-radius: 15px;
+        background-color:#ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.5s;
+        overflow: scroll;
+    }
+    
+    .fourth-folder-on {
+        position: absolute;
+        margin-left: -60px;
+        margin-top: 0px;
+        z-index: 2;
+        height: 430px;
+        width: 230px;
+        padding: 0px;
+        border-radius: 15px;
+        background-color:#ffffff;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.5s;
+        overflow: scroll;
+    }
+}
