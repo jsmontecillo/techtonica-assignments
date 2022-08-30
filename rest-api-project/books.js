@@ -38,7 +38,7 @@ const BOOKS = [{
     "isbn": "0553093476",
     "title": "The Bell Jar",
     "author": "Sylvia Plath",
-    "format": "Hardcover"
+    "format": "E-book"
 },
 {
     "isbn": "0553115634",
