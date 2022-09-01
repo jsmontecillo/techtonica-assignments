@@ -1,0 +1,46 @@
+body {
+    font-family: 'Source Code Pro', monospace;
+}
+
+button {
+    font-size: 8px;
+    border-radius: 50px;
+    border: none;
+}
+
+.delete {
+    color: white;
+    background-color: black;
+}
+
+.edit {
+    color: white;
+    background-color: black;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+}
+
+.row {
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.class-title{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.book-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}

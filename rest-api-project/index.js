@@ -27,4 +27,33 @@ app.get('/', (req,res) => {
     //res.send("Hello Techtonica, this will be my first REST API");
     //opens the index.html file that is in the client folder in your path
     res.sendFile(path.join(__dirname, 'client', 'index.html'))
+});
+
+app.get('/book/:isbn', (req,res) => {
+    const isbn = req.params.isbn;
+    for (let book of books) {
+        if (book.isbn === isbn) {
+            res.json(book);
+            return;
+        }
+    }
+    res.status(404).send('Book not found');
+})
+
+app.post('/book', (req,res) => {
+    const book = req.body;
+    console.log(book);
+    books.push(book);
+    res.send('Book is added to the database');
+});
+
+app.delete('/book/:isbn', (req,res) => {
+    const isbn = req.params.isbn;
+    books = books.filter(i => {
+        if (i.isbn !== isbn) {
+            return true;
+        }
+        return false;
+    });
+    res.send('Book is deleted');
 })
