@@ -84,6 +84,13 @@ let books = [{
     "author": "Longchenpa",
     "format": "Hardcover",
     "image": "mind.jpg"
+},
+{
+    "isbn": "12",
+    "title":"Goodnight, Pun Pun",
+    "author": "Inio Asano",
+    "format": "Paperback",
+    "image": "punpun.jpg"
 }
 ];
 // configuring cors middleware
@@ -119,7 +126,7 @@ app.post('/book', (req,res) => {
     const book = req.body;
     // Output the book to the console for debugging
     books.push(book);
-    res.send('Book has been added');
+    res.send('Book has been added. <a href="/">Return to library</a>');
 });
 
 app.delete('/book/:isbn', (req,res) => {
