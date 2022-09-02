@@ -1,4 +1,4 @@
-const BOOKS = [{
+let books = [{
     "isbn": "0553120441",
     "title": "Kafka on the Shore",
     "author": "Haruki Murakami",
@@ -66,4 +66,4 @@ const BOOKS = [{
 }
 ]
 
- export default BOOKS;
+ export default books;
