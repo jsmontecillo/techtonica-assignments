@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+body {
+  font-family: 'Questrial', sans-serif;
+  color: whitesmoke;
+}
+
+.clear {
+  background-image:url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg');
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.night-time {
+  background-image:url('https://images.pexels.com/photos/4737484/pexels-photo-4737484.jpeg?cs=srgb&dl=pexels-rafael-cerqueira-4737484.jpg&fm=jpg');
+}
+
+.cloudy {
+  background-image:url('https://img.freepik.com/premium-photo/grey-white-fluffy-clouds-texture-closeup-detail-white-clouds-texture-background-soft-touch-feeling-like-cotton-white-puffy-clouds-gloomy-moody-sky-background-dead-tranquility_33867-1930.jpg?w=2000');
+}
+
+.rainy {
+  background-image:url();
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
