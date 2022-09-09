@@ -32,13 +32,13 @@ const Weather = () => {
                         document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://www.pixelstalk.net/wp-content/uploads/2016/03/Free-cloud-wallpaper-HD.jpg')"
                     break;
                     case "Snow":
-                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpaperaccess.com/full/435550.jpg')";
                     break;
                     case "Drizzle":
-                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://images.pexels.com/photos/268917/pexels-photo-268917.jpeg?cs=srgb&dl=pexels-pixabay-268917.jpg&fm=jpg')";
                     break;
                     case "Thunderstorm":
-                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://images.pexels.com/photos/1118869/pexels-photo-1118869.jpeg')";
                     break;
                 }
             }) 
@@ -59,7 +59,7 @@ console.log(weatherData)
             ) : (
                 <>
                 <div>
-                    <p style={{fontSize: "30px"}}>This is {weatherData.weather[0].description}.</p>
+                    <p style={{fontSize: "30px", marginLeft: "30px"}}>This is {weatherData.weather[0].description}.</p>
                     <img src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`} alt={weatherData.weather[0].main}/>
                     <p>Temp: {weatherData.main.temp}°F</p>
                     <p>Weather: {weatherData.weather[0].main}</p>
@@ -71,7 +71,7 @@ console.log(weatherData)
                 </div>
                 </>
             ) : (
-                <p>Welcome!</p>
+                <p style={{fontSize: "30px"}}>Welcome!</p>
                 )
             }
 
