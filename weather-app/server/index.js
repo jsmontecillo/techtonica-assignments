@@ -14,9 +14,10 @@ app.get('/', (req,res) => {
     res.json("Hello from Techtonica");
 });
 
+const cities = ["london", "los angeles", "chicago", "new york", "tokyo", "austin", "las vegas", "new orleans", "seattle", "miami"]
 
 app.get("/weather", (req,res) => {
-    const city = "london";
+    const city = cities[Math.floor(Math.random() * cities.length)];
     const apiKey = process.env.REACT_API_KEY;
     const params = new URLSearchParams({
         q: city,
