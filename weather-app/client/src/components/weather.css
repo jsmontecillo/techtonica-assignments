@@ -1,0 +1,6 @@
+.weather {
+    z-index: 3;
+    margin-top: -300px;
+    line-height: 20%;
+    color: black;
+}

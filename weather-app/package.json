@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@expo-google-fonts/questrial": "^0.2.2",
+    "dotenv": "^16.0.2"
+  }
+}
