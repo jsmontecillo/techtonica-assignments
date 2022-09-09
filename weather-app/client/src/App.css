@@ -4,10 +4,6 @@ body {
   color: whitesmoke;
 }
 
-.clear {
-  background-image:url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg');
-}
-
 h1 {
   font-size: 30px;
 }
@@ -16,13 +12,6 @@ h1 {
   background-image:url('https://images.pexels.com/photos/4737484/pexels-photo-4737484.jpeg?cs=srgb&dl=pexels-rafael-cerqueira-4737484.jpg&fm=jpg');
 }
 
-.cloudy {
-  background-image:url('https://img.freepik.com/premium-photo/grey-white-fluffy-clouds-texture-closeup-detail-white-clouds-texture-background-soft-touch-feeling-like-cotton-white-puffy-clouds-gloomy-moody-sky-background-dead-tranquility_33867-1930.jpg?w=2000');
-}
-
-.rainy {
-  background-image:url();
-}
 
 .App {
   text-align: center;

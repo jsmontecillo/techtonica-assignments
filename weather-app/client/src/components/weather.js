@@ -8,7 +8,6 @@ const Weather = () => {
     let hr = today.getHours();
     console.log(hr)
     const [weatherData, setWeatherData] = useState(null);
-    const [weatherBackground, setWeatherBackground] = useState("https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg")
     const handleSubmit =  (e) => {
         e.preventDefault();
 
@@ -24,24 +23,22 @@ const Weather = () => {
                 setWeatherData(data);
                 switch(data.weather[0].main) {
                     case "Clouds":
-                        console.log("hi");
                         document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpaper.dog/large/10981227.jpg')";
                     break;
                     case "Clear":
-                        console.log("hi")
                         document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
                     break;
                     case "Rain":
-                        setWeatherBackground("");
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://www.pixelstalk.net/wp-content/uploads/2016/03/Free-cloud-wallpaper-HD.jpg')"
                     break;
                     case "Snow":
-                        setWeatherBackground("");
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
                     break;
                     case "Drizzle":
-                        setWeatherBackground("");
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
                     break;
                     case "Thunderstorm":
-                        setWeatherBackground("");
+                        document.getElementsByTagName('body')[0].style.backgroundImage = "url('https://wallpapers.com/images/hd/hd-blue-sky-wallpaper-full-hd-picture-mvehfqz6w2ges2dj.jpg')";
                     break;
                 }
             }) 
