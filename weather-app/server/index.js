@@ -14,7 +14,7 @@ app.get('/', (req,res) => {
     res.json("Hello from Techtonica");
 });
 
-const cities = ["london", "los angeles", "chicago", "new york", "tokyo", "austin", "las vegas", "new orleans", "seattle", "miami"]
+const cities = ["london", "los angeles", "chicago", "new york", "tokyo", "austin", "las vegas", "new orleans", "seattle", "miami", "paris", "dubai", "bangkok", "milan", "hanoi"]
 
 app.get("/weather", (req,res) => {
     const city = cities[Math.floor(Math.random() * cities.length)];
