@@ -2,11 +2,13 @@ import './App.css';
 import QuestionGrid from "./components/questiongrid";
 
 function App() {
+
   return (
-    <div className="App">
+    <div className="test">
+      <div className="center-card">
       <h1>Trivia Quiz</h1>
-      <p>Instructions:</p>
       <QuestionGrid />
+      </div>
     </div>
   );
 }
