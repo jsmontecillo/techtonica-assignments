@@ -54,6 +54,10 @@ const QuestionGrid = () => {
     }
     console.log(score.current);
 
+    function refreshPage() {
+        window.location.reload(false);
+      }
+
     return (
         <>
             <div className="questions">
@@ -73,7 +77,10 @@ const QuestionGrid = () => {
                     <>
                         <p>Score: {(score.current/5)*100}%</p>
                         <p>Now let's vibe.</p>
-                        <img src={snoop} alt="dancing" />
+                        <input type="button" value ="Try Again" className="button-53" onClick={refreshPage} />
+                        <div>
+                            <img src={snoop} alt="dancing" />
+                        </div>
                     </>
                 )}
                 </>
