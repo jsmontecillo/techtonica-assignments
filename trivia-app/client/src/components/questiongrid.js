@@ -12,6 +12,8 @@ const QuestionGrid = () => {
     const score = useRef(0);
     const target = useRef();
 
+    decode('&lt; &gt; &quot; &apos; &amp; &#169; &#8710;');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         new Audio(audio).play();
@@ -19,7 +21,6 @@ const QuestionGrid = () => {
         fetch(`http://localhost:4040/api/trivia/${topicData}`)
         .then((response) => {
             if(response.ok) {
-                decode('&lt; &gt; &quot; &apos; &amp; &#169; &#8710;');
                 return response.json();
             } else {
                 throw new Error("Bad response");
@@ -85,6 +86,8 @@ const QuestionGrid = () => {
                             <option value="art">Art</option>
                             <option value="music">Music</option>
                             <option value="mythology">Mythology</option>
+                            <option value="history">History</option>
+                            <option value="math">Math</option>
                         </select><br/>
                         <input type="submit" value="START" className="button-53" onSubmit={handleSubmit}/>
                     </form><br />
