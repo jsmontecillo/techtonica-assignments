@@ -10,7 +10,7 @@ const QuestionCard = (props) => {
     console.log(shuffled);
     return (
         <div>
-            <div style={{fontSize: "25px"}}>{props.result.question}</div><br/>
+            <div dangerouslySetInnerHTML={ {__html: props.result.question} } style={{fontSize: "25px"}} /><br/>
             <fieldset onChange={props.choice}>
                 <input type="radio" id="1" name="answer" value={shuffled[0].isCorrect}/>
                 <label for="1">{shuffled[0].text}</label><br/>

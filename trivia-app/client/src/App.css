@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
-.App-header {
-  background-color: #6c727e;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 h1 {
   font-size: 50px;
 }
@@ -76,7 +61,7 @@ background-position: 0% 50%
 }
 
 .center-card {
-  background-color: rgb(49, 50, 53);
+  background-color: rgb(19, 19, 19);
   border-radius: 10px;
   border: 2px solid white;
   height: 500px;

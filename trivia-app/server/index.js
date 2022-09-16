@@ -70,5 +70,29 @@ app.get('/api/trivia/mythology', (req,res) => {
     });
 });
 
+app.get('/api/trivia/history', (req,res) => {
+    const url = "https://opentdb.com/api.php?amount=5&category=23&type=multiple";
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+});
+
+app.get('/api/trivia/math', (req,res) => {
+    const url = "https://opentdb.com/api.php?amount=5&category=19&type=multiple";
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+        res.send(data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+});
+
 app.listen(PORT, () => console.log(`Hi! Server running on port http://localhost:${PORT}`));
 
