@@ -1,8 +1,6 @@
 import './App.css';
 import QuestionGrid from "./components/questiongrid";
 import open from "./open.png";
-import kiss from "./kiss.png";
-import coke from "./coke.png";
 
 function App() {
 
@@ -12,7 +10,6 @@ function App() {
       <div className="center-card">
       <h1>Trivia Quiz</h1>
       <QuestionGrid />
-      <img src={coke} alt="coca cola bottle" style={{width: "160px", position: "fixed", zIndex: 5, marginLeft: "80px", marginTop: "150px", bottom: -50, right: -80}}/>
       </div>
     </div>
   );
