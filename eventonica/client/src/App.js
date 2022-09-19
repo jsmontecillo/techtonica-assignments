@@ -1,4 +1,5 @@
 import calendar from "./calendar.png";
+import Footer from "./components/footer"
 import "./App.css";
 
 function App() {
@@ -98,19 +99,7 @@ function App() {
           </div>
         </aside>
       </main>
-
-      <footer>
-        <div>
-          Star Calendar favicon made by
-          <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
-            Freepik
-          </a>
-          Find your own on
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            FlatIcon.com
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
