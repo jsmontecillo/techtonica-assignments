@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 
 const event1 = {
     id: "1",
@@ -24,8 +24,39 @@ const event3 = {
     category: "Education",
 };
 
+const reducer = (state, action) => {
+    console.log(action, 'this is the action');
+    switch (action.type) {
+      case 'editName':
+        console.log('Logged if the editName action is being dispatched');
+        return { ...state, name: action.payload };
+  
+      case 'editDescription':
+        return { ...state, description: action.payload };
+  
+      case 'editCategory':
+        return { ...state, category: action.payload };
+  
+      default:
+        return state;
+    }
+};
+
 const Events = () => {
+    const initialState = {
+        id: '',
+        name: '',
+        date: null,
+        description: '',
+        category: ''
+    };
     const [events, setEvents] = useState([event1, event2, event3]);
+    //const [state, dispatch] = useReducer(reducer, initialState);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        //events.push(state);
+    }
     return (
         <section className="event-management">
             <h2>Event Management</h2>
@@ -38,16 +69,47 @@ const Events = () => {
               </ul>
 
               <h3>Add Event</h3>
-              <form id="add-event" action="#">
+              <form id="add-event" action="#" onSubmit={onSubmit}>
                 <fieldset>
                   <label>Name</label>
                   <input
                     type="text"
                     id="add-event-name"
-                    placeholder="Virtual corgi meetup"
+                    //value={state.name}
+                    //onChange={(e) =>
+                        //dispatch({
+                          //type: 'editName',
+                         //payload: e.target.value
+                        //})}
+                  />
+                  <label>Date</label>
+                  <input
+                    type="text"
+                    id="add-event-date"
+                  />
+                  <label>Description</label>
+                  <input
+                    type="text"
+                    id="add-event-desc"
+                    // value={state.description}
+                    // onChange={(e) =>
+                    //     dispatch({
+                    //       type: 'editDescription',
+                    //       payload: e.target.value
+                    //     })}
+                  />
+                  <label>Category</label>
+                  <input
+                    type="text"
+                    id="add-event-category"
+                    // value={state.category}
+                    // onChange={(e) =>
+                    //     dispatch({
+                    //       type: 'editCategory',
+                    //       payload: e.target.value
+                    //     })}
                   />
                 </fieldset>
-                {/* Add more form fields here */}
                 <input type="submit" />
               </form>
             </div>
