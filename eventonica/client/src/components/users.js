@@ -9,10 +9,10 @@ const Users = () => {
     const [users, setUsers] = useState([marlin, nemo, dory]);
     const [values, setValues] = useState({name: "", ID: "", email: ""});
 
-    const getUsers = () => {
-        fetch('http://localhost:4000/users')
-        .then((res) => res.json())
-        .then((res) => setUsers(res.users));
+    const getUsers = async () => {
+        const response = await fetch('http://localhost:4000/users');
+        const user = await response.json();
+        setUsers(user);
     };
 
     useEffect(() => {
@@ -27,10 +27,20 @@ const Users = () => {
         }))
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        users.push(values);
-        console.log(values, users);
+        const newUser = values;
+        const rawResponse = await fetch('http://localhost:4000/users', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newUser)
+        });
+        const content = await rawResponse.json();
+      
+        setUsers([...users, content]);
         setValues({name: "", ID: "", email: ""});
     }
 
