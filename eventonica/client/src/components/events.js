@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react';
+import React, {useState, useReducer, useEffect} from 'react';
 
 const event1 = {
     id: "1",
@@ -53,10 +53,31 @@ const Events = () => {
     const [events, setEvents] = useState([event1, event2, event3]);
     //const [state, dispatch] = useReducer(reducer, initialState);
 
-    const onSubmit = (e) => {
+    const getEvents = async () => {
+      const response = await fetch('http://localhost:4000/events');
+      const event = await response.json();
+      setEvents(event);
+  };
+  useEffect(() => {
+    // useEffect will run getUsers() every time this component loads, as opposed to just the first time it is rendered.
+    getEvents();
+    }, []);
+
+    const onSubmit = async (e) => {
         e.preventDefault();
-        //events.push(state);
+        const newEvent = events;
+        const rawResponse = await fetch('http://localhost:4000/events', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newEvent)
+        });
+        const content = await rawResponse.json();
+        setEvents([...events, content]);
     }
+
     return (
         <section className="event-management">
             <h2>Event Management</h2>
