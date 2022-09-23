@@ -19,29 +19,31 @@ const Tab = styled.button`
   ${({ active }) =>
     active &&
     `
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #4444dd;
     opacity: 1;
   `}
 `;
 const ButtonGroup = styled.div`
   display: flex;
 `;
-const types = ['Users', 'Events', 'Event Search'];
+const types = ['Users', 'Events', 'Contact Us'];
 const typeTags = [<div className="users"><Users /></div>, <div className="events"><Events /></div>,       <main>
-
-<aside className="search-toolbar">
-  <div>
-    <h3>Find Events</h3>
+  <div style={{textAlign: "center"}}>
+    <h3>Any Questions?</h3>
     <form id="search" action="#">
       <fieldset>
-        <label htmlFor="category-search">Category</label>
-        <input className="box" type="text" id="category-search" />
+        <label htmlFor="category-search">Name</label>
+        <input className="box" type="text" id="category-search" /><br/>
+        <label htmlFor="category-search">Email</label>
+        <input className="box" type="text" id="category-search" /><br/>
+        <label htmlFor="category-search">Questions</label>
+        <input className="box" type="text" id="category-search" /><br/>
       </fieldset>
 
       <input type="submit" value="Search" />
     </form>
   </div>
-</aside>
+
 
 </main>];
 
@@ -62,7 +64,7 @@ function App() {
           </Tab>
         ))}
       </ButtonGroup>
-      <p style={{marginTop: "0px"}}> {data} </p>
+      <div style={{marginTop: "0px"}}> {data} </div>
 
       <Footer />
     </div>

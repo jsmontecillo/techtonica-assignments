@@ -40,6 +40,8 @@ const Events = () => {
     };
     const [events, setEvents] = useState([]);
     const [state, dispatch] = useReducer(reducer, initialState);
+    const [searched, setSearched] = useState(false);
+    const [data, setData] = useState(events);
 
     const getEvents = async () => {
       const response = await fetch('http://localhost:4000/events');
@@ -73,16 +75,41 @@ const Events = () => {
       setEvents(deleteEvent);
     }
 
+    const handleSearch = async (e) => {
+      e.preventDefault();
+      setSearched(true);
+      console.log(searched);
+      let item = e.target.value;
+      console.log(item);
+      let result = events.filter((data) => {
+        return data.category.toLowerCase().startsWith(item.toLowerCase());
+      });
+      setData(result);
+
+      }
+
+
     return (
-        <section className="event-management">
+        <section className="event-management" style={{textAlign: "center"}}>
             <h2>Event Management</h2>
-            <div>
-              <h3>All Events</h3>
+            <h3>All Events</h3>
+            <div className="container">
               <ul id="events-list">
               {events.map((item, index) => {
-                return (<div className="event-card">
-                  <li key={index}><img src={item.image || ""} alt="event image" style={{height: "150px"}}/><br/>{item.name}:<br/> {item.date}</li>
-                  </div>)
+                return (
+                    <div className="event-card">
+                      <li key={index}>
+                        <div className="event-image">
+                          <img src={item.image || ""} alt="event image" style={{height: "150px", borderRadius:"6px", border: "1px solid pink"}}/><br/>
+                        </div>
+                        <div className="event-info">
+                          <span style={{color: "#4444dd", fontWeight: "bold"}}>{item.name}</span><br/> 
+                          <span>{item.category}</span><br/>
+                          <p>{item.description}</p>
+                        </div>
+                      </li>
+                    </div>
+                )
               })}
               </ul>
 
@@ -136,7 +163,7 @@ const Events = () => {
                            type: 'editCategory',
                            payload: e.target.value
                          })}
-                  />
+                  /><br/>
                   <label>Image</label>
                   <input
                   className="box"
@@ -155,6 +182,24 @@ const Events = () => {
             </div>
                   
             <DeleteEvents deleteEvent={handleDelete}/>    
+
+            <div className="search-toolbar">
+  <div>
+    <h3>Find Events</h3>
+    <form id="search" action="#" onSubmit={handleSearch}>
+      <fieldset>
+        <label htmlFor="category-search">Category</label>
+        <input className="box" type="text" id="category-search" onChange={handleSearch}/>
+      </fieldset>
+    </form>
+
+    <div>
+          <h3>Your Events</h3>
+            {searched ? (data.map((item) => (<div className="event-card"><img src={item.image} alt="event" style={{height: "250px", borderRadius: "6px"}}/><br/><strong>{item.name}</strong><br/>
+            {item.date}<br/>Category: {item.category}<br/>{item.description}<br/> </div>))): (<div></div>)}
+            </div>
+  </div>
+</div>
           </section>
     );
 }

@@ -9,7 +9,7 @@ const DeleteEvents = ({deleteEvent}) => {
         setID('');
     }
     return (
-        <div>
+        <div style={{padding: '10px'}}>
         <h3>Delete Event</h3>
         <form id="delete-event" action="#" onSubmit={handleSubmit}>
           <fieldset>
