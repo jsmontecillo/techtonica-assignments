@@ -88,6 +88,7 @@ const Events = () => {
                 <fieldset>
                   <label>Name</label>
                   <input
+                  className="box"
                     type="text"
                     id="add-event-name"
                     value={state.name || ""}
@@ -99,6 +100,7 @@ const Events = () => {
                   /><br/>
                   <label>Date</label>
                   <input
+                  className="box"
                     type="text"
                     id="add-event-date"
                     value={state.date || ""}
@@ -110,6 +112,7 @@ const Events = () => {
                   /><br/>
                   <label>Description</label>
                   <input
+                  className="box"
                     type="text"
                     id="add-event-desc"
                     value={state.description || ""}
@@ -121,6 +124,7 @@ const Events = () => {
                   /><br/>
                   <label>Category</label>
                   <input
+                  className="box"
                     type="text"
                     id="add-event-category"
                      value={state.category || ""}

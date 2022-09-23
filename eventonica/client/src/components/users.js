@@ -66,11 +66,11 @@ const Users = () => {
             <form id="add-user" action="#" onSubmit={onSubmit}>
                 <fieldset>
                     <label>Name</label>
-                    <input type="text" id="add-user-name" name="name" value={values.name} onChange={handleInput}/><br/>
+                    <input className="box" type="text" id="add-user-name" name="name" value={values.name} onChange={handleInput}/><br/>
                     <label>ID </label>
-                    <input type="text" id="add-ID" name="ID" value={values.ID} onChange={handleInput}/><br/>
+                    <input className="box" type="text" id="add-ID" name="ID" value={values.ID} onChange={handleInput}/><br/>
                     <label>Email</label>
-                    <input type="text" id="add-email" name="email" value={values.email} onChange={handleInput}/>
+                    <input className="box" type="text" id="add-email" name="email" value={values.email} onChange={handleInput}/>
                 </fieldset>
                 <input type="submit" value="Add" />
             </form>

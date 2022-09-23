@@ -14,7 +14,7 @@ const DeleteEvents = ({deleteEvent}) => {
         <form id="delete-event" action="#" onSubmit={handleSubmit}>
           <fieldset>
             <label>Event ID</label>
-            <input type="number" min="1" id="delete-event-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
+            <input className="box" type="number" min="1" id="delete-event-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
           </fieldset>
           <input type="submit" />
         </form>

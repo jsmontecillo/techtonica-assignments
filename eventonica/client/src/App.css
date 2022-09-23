@@ -34,12 +34,25 @@ footer {
   color: gray;
 }
 
+label{
+  display: inline-block;
+  clear: left;
+  width: 100px;
+  text-align: right;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
 .users {
   background-color:aliceblue;
   padding: 10px;
 }
 .events {
-  background-color: #f4b4cd;
+  background-color: #f9c4d8;
   padding: 10px;
   border-radius: 6px;
 }

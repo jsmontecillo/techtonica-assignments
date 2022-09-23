@@ -14,7 +14,7 @@ const DeleteUser = ({deleteUser}) => {
         <form id="delete-user" action="#" onSubmit={handleSubmit}>
             <fieldset>
                 <label>User ID</label>
-                <input type="number" id="delete-user-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
+                <input className="box" type="number" id="delete-user-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
              </fieldset>
             <input type="submit" />
         </form>

@@ -7,7 +7,9 @@ import styled from 'styled-components';
 import {useState} from 'react';
 
 const Tab = styled.button`
+  width: 100%;
   font-size: 20px;
+  font-family: Courier New;
   padding: 10px 60px;
   cursor: pointer;
   opacity: 0.6;
@@ -33,11 +35,11 @@ const typeTags = [<div className="users"><Users /></div>, <div className="events
     <form id="search" action="#">
       <fieldset>
         <label htmlFor="date-search">Date</label>
-        <input type="text" id="date-search" placeholder="YYYY-MM-DD" />
+        <input className="box" type="text" id="date-search" placeholder="YYYY-MM-DD" />
       </fieldset>
       <fieldset>
         <label htmlFor="category-search">Category</label>
-        <input type="text" id="category-search" />
+        <input className="box" type="text" id="category-search" />
       </fieldset>
 
       <input type="submit" value="Search" />
@@ -64,7 +66,7 @@ function App() {
           </Tab>
         ))}
       </ButtonGroup>
-      <p> {data} </p>
+      <p style={{marginTop: "0px"}}> {data} </p>
 
       <Footer />
     </div>
