@@ -1,28 +1,5 @@
 import React, {useState, useReducer, useEffect} from 'react';
-
-const event1 = {
-    id: "1",
-    name: "Birthday",
-    date: "2021-09-01",
-    description: "A birthday party for my best friend",
-    category: "Celebration",
-};
-  
-const event2 = {
-    id: "2",
-    name: "Graduation",
-    date: "2021-08-01",
-    description: "The class of 2021 graduates from East High",
-    category: "Education",
-};
-  
-const event3 = {
-    id: "3",
-    name: "JS Study Session",
-    date: "2021-10-01",
-    description: "A chance to practice Javascript interview questions",
-    category: "Education",
-};
+import DeleteEvents from './deleteEvents';
 
 const reducer = (state, action) => {
     console.log(action, 'this is the action');
@@ -36,11 +13,18 @@ const reducer = (state, action) => {
   
       case 'editCategory':
         return { ...state, category: action.payload };
+
+      case 'editDate':
+        return { ...state, date: action.payload };
+
+        case 'editID':
+          return { ...state, id: action.payload };
   
       default:
         return state;
     }
 };
+
 
 const Events = () => {
     const initialState = {
@@ -50,8 +34,8 @@ const Events = () => {
         description: '',
         category: ''
     };
-    const [events, setEvents] = useState([event1, event2, event3]);
-    //const [state, dispatch] = useReducer(reducer, initialState);
+    const [events, setEvents] = useState([]);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     const getEvents = async () => {
       const response = await fetch('http://localhost:4000/events');
@@ -64,18 +48,25 @@ const Events = () => {
     }, []);
 
     const onSubmit = async (e) => {
-        e.preventDefault();
-        const newEvent = events;
-        const rawResponse = await fetch('http://localhost:4000/events', {
+      e.preventDefault();
+      const newEvent = {id: state.id, name: state.name, date: state.date, description: state.description, category: state.category};
+      const response = await fetch('http://localhost:4000/events', {
           method: 'POST',
           headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
+              Accept: 'application/json',
+              'Content-Type': 'application/json'
           },
           body: JSON.stringify(newEvent)
-        });
-        const content = await rawResponse.json();
-        setEvents([...events, content]);
+      });
+      const content = await response.json();
+      setEvents([...events, content]);
+    }
+
+    const handleDelete = async (ID) => {
+      let response = await fetch(`http://localhost:4000/users/${ID}`, {method: "DELETE"})
+      await response.json();
+      let deleteEvent = events.filter((eve) => eve.id !== Number(ID));
+      setEvents(deleteEvent);
     }
 
     return (
@@ -85,7 +76,9 @@ const Events = () => {
               <h3>All Events</h3>
               <ul id="events-list">
               {events.map((item, index) => {
-                return (<li key={index}>{item.name}: {item.date}</li>)
+                return (<div>
+                  <li key={index}>{item.name}: {item.date}</li>
+                  </div>)
               })}
               </ul>
 
@@ -96,44 +89,52 @@ const Events = () => {
                   <input
                     type="text"
                     id="add-event-name"
-                    //value={state.name}
-                    //onChange={(e) =>
-                        //dispatch({
-                          //type: 'editName',
-                         //payload: e.target.value
-                        //})}
-                  />
+                    value={state.name || ""}
+                    onChange={(e) =>
+                        dispatch({
+                          type: 'editName',
+                          payload: e.target.value
+                        })}
+                  /><br/>
                   <label>Date</label>
                   <input
                     type="text"
                     id="add-event-date"
-                  />
+                    value={state.date || ""}
+                      onChange={(e) =>
+                         dispatch({
+                           type: 'editDate',
+                           payload: e.target.value
+                         })}
+                  /><br/>
                   <label>Description</label>
                   <input
                     type="text"
                     id="add-event-desc"
-                    // value={state.description}
-                    // onChange={(e) =>
-                    //     dispatch({
-                    //       type: 'editDescription',
-                    //       payload: e.target.value
-                    //     })}
-                  />
+                    value={state.description || ""}
+                     onChange={(e) =>
+                         dispatch({
+                           type: 'editDescription',
+                           payload: e.target.value
+                         })}
+                  /><br/>
                   <label>Category</label>
                   <input
                     type="text"
                     id="add-event-category"
-                    // value={state.category}
-                    // onChange={(e) =>
-                    //     dispatch({
-                    //       type: 'editCategory',
-                    //       payload: e.target.value
-                    //     })}
+                     value={state.category || ""}
+                     onChange={(e) =>
+                       dispatch({
+                           type: 'editCategory',
+                           payload: e.target.value
+                         })}
                   />
                 </fieldset>
                 <input type="submit" />
               </form>
             </div>
+                  
+            <DeleteEvents deleteEvent={handleDelete}/>    
           </section>
     );
 }

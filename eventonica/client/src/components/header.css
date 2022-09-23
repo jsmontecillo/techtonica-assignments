@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.nav {
+    background-color: #f4b4cd;
+    font-family: 'Righteous', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: #dcf93c;
+    filter: drop-shadow(30px 10px 4px #4444dd);
+}
+
+img {
+    height: 64px;
+    margin-right: 1em;
+}
+
+li {
+    display: inline;
+    padding: 20px;
+
+}
+
+ul {
+    display: flex;
+    justify-content: center; 
+}

@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
+body {
+  background-color: #dcf93c;
+  font-family: 'Inconsolata', monospace;
+}
 fieldset {
   border: none;
   margin: 1rem 0;
 }
 
 header {
-  /* For more about flexbox, see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   display: flex;
   align-items: center;
 }
@@ -28,3 +33,14 @@ footer {
   font-size: small;
   color: gray;
 }
+
+.users {
+  background-color:aliceblue;
+  padding: 10px;
+}
+.events {
+  background-color: #f4b4cd;
+  padding: 10px;
+  border-radius: 6px;
+}
+

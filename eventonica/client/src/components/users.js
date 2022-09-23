@@ -8,6 +8,7 @@ const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 const Users = () => {
     const [users, setUsers] = useState([marlin, nemo, dory]);
     const [values, setValues] = useState({name: "", ID: "", email: ""});
+    const [ID, setID] = useState("");
 
     const getUsers = async () => {
         const response = await fetch('http://localhost:4000/users');
@@ -44,10 +45,12 @@ const Users = () => {
         setValues({name: "", ID: "", email: ""});
     }
 
-    const deleteUser = (deleteId) => {
-        const newUsers = users.filter((i) => i.id !== deleteId);
-        setUsers(newUsers);
-    };
+    const handleDelete = async (ID) => {
+        let response = await fetch(`http://localhost:4000/users/${ID}`, {method: "DELETE"})
+        await response.json();
+        let deleteUsers = users.filter((user) => user.id !== Number(ID));
+        setUsers(deleteUsers);
+    }
 
     return (
     <section className="user-management">
@@ -63,17 +66,16 @@ const Users = () => {
             <form id="add-user" action="#" onSubmit={onSubmit}>
                 <fieldset>
                     <label>Name</label>
-                    <input type="text" id="add-user-name" name="name" value={values.name} onChange={handleInput}/>
-                    <label>ID</label>
-                    <input type="text" id="add-ID" name="ID" value={values.ID} onChange={handleInput}/>
+                    <input type="text" id="add-user-name" name="name" value={values.name} onChange={handleInput}/><br/>
+                    <label>ID </label>
+                    <input type="text" id="add-ID" name="ID" value={values.ID} onChange={handleInput}/><br/>
                     <label>Email</label>
                     <input type="text" id="add-email" name="email" value={values.email} onChange={handleInput}/>
                 </fieldset>
                 <input type="submit" value="Add" />
             </form>
         </div>
-
-        <DeleteUser delete={deleteUser}/>
+        <DeleteUser deleteUser={handleDelete}/>
     </section>
   )
 };

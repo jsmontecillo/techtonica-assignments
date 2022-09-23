@@ -1,32 +1,20 @@
-import calendar from "./calendar.png";
 import Footer from "./components/footer";
 import Users from "./components/users";
 import Events from "./components/events";
+import Header from "./components/header";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <img src={calendar} alt="Calendar Star Logo" />
-        <h1>Eventonica</h1>
-      </header>
+      <Header />
 
       <main>
-        <div className="user-and-events">
+        <div className="users">
           <Users />
-          <Events />
         </div>
-
-        <div>
-          <h3>Delete Event</h3>
-          <form id="delete-event" action="#">
-            <fieldset>
-              <label>Event ID</label>
-              <input type="number" min="1" id="delete-event-id" />
-            </fieldset>
-            <input type="submit" />
-          </form>
+        <div className="events">
+          <Events />
         </div>
 
         <aside className="search-toolbar">
@@ -46,6 +34,7 @@ function App() {
             </form>
           </div>
         </aside>
+        
       </main>
       <Footer />
     </div>
