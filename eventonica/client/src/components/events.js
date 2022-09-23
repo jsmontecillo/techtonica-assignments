@@ -35,6 +35,7 @@ const Events = () => {
         category: ''
     };
     const [events, setEvents] = useState([]);
+    const [searchedData, setSearchedData] = useState("");
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const getEvents = async () => {

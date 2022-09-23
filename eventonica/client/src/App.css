@@ -44,3 +44,10 @@ footer {
   border-radius: 6px;
 }
 
+.search-toolbar {
+  width: 100%;
+  margin-left: -5px;
+  background-color:antiquewhite;
+  padding: 10px;
+  border-radius: 6px;
+}
