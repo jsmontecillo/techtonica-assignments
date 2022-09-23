@@ -80,8 +80,8 @@ const Events = () => {
               <h3>All Events</h3>
               <ul id="events-list">
               {events.map((item, index) => {
-                return (<div>
-                  <li key={index}><img src={item.image || ""} alt="event image" style={{height: "100px"}}/><br/>{item.name}:<br/> {item.date}</li>
+                return (<div className="event-card">
+                  <li key={index}><img src={item.image || ""} alt="event image" style={{height: "150px"}}/><br/>{item.name}:<br/> {item.date}</li>
                   </div>)
               })}
               </ul>
