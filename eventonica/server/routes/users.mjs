@@ -30,13 +30,14 @@ router.get('/', async function (req, res, next) {
 router.post('/', async (req, res) => {
   const user = {
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email,
+    profile: req.body.profile
   };
   console.log(user);
   try {
     const createdUser = await db.one(
-      'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *',
-      [user.name, user.email]
+      'INSERT INTO users(name, email, profile) VALUES($1, $2, $3) RETURNING *',
+      [user.name, user.email, user.profile]
     );
     console.log(createdUser);
     res.send(createdUser);

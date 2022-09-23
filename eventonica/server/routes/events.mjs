@@ -24,12 +24,13 @@ router.get('/', async function (req, res, next) {
         name: req.body.name,
         date: req.body.date,
         description: req.body.description,
-        category: req.body.category
+        category: req.body.category,
+        image: req.body.image
       };
       try {
         const createdEvent = await db.one(
-            'INSERT INTO events(name, date, description, category) VALUES($1, $2, $3 , $4) RETURNING *',
-          [newEvent.name, newEvent.date, newEvent.description, newEvent.category]
+            'INSERT INTO events(name, date, description, category, image) VALUES($1, $2, $3 , $4, $5) RETURNING *',
+          [newEvent.name, newEvent.date, newEvent.description, newEvent.category, newEvent.image]
         );
         console.log(createdEvent);
         res.send(createdEvent);

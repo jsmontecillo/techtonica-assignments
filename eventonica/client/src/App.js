@@ -34,10 +34,6 @@ const typeTags = [<div className="users"><Users /></div>, <div className="events
     <h3>Find Events</h3>
     <form id="search" action="#">
       <fieldset>
-        <label htmlFor="date-search">Date</label>
-        <input className="box" type="text" id="date-search" placeholder="YYYY-MM-DD" />
-      </fieldset>
-      <fieldset>
         <label htmlFor="category-search">Category</label>
         <input className="box" type="text" id="category-search" />
       </fieldset>

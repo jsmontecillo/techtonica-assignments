@@ -51,8 +51,13 @@ label{
   background-color:aliceblue;
   padding: 10px;
 }
+
+.profile-pic {
+  border-radius: 50%;
+}
+
 .events {
-  background-color: #f9c4d8;
+  background-color: #f4d9e4;
   padding: 10px;
   border-radius: 6px;
 }

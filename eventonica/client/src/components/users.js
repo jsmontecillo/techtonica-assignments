@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import DeleteUser from './deleteUser';
+import profile from './profile.jpg';
 
 const marlin = { name: 'Marlin', email: 'marlin@gmail.com', id: '1' };
 const nemo = { name: 'Nemo', email: 'nemo@gmail.com', id: '2' };
@@ -7,8 +8,7 @@ const dory = { name: 'Dory', email: 'dory@gmail.com', id: '3' };
 
 const Users = () => {
     const [users, setUsers] = useState([marlin, nemo, dory]);
-    const [values, setValues] = useState({name: "", ID: "", email: ""});
-    const [ID, setID] = useState("");
+    const [values, setValues] = useState({name: "", ID: "", email: "", profile: ""});
 
     const getUsers = async () => {
         const response = await fetch('http://localhost:4000/users');
@@ -42,7 +42,7 @@ const Users = () => {
         const content = await rawResponse.json();
       
         setUsers([...users, content]);
-        setValues({name: "", ID: "", email: ""});
+        setValues({name: "", ID: "", email: "", profile: ""});
     }
 
     const handleDelete = async (ID) => {
@@ -57,7 +57,10 @@ const Users = () => {
         <h2>User Management</h2>
         <ul id="users-list">
             {users.map((item, index) => {
-                return (<li key={index}>{item.name}</li>)
+                return (<li key={index}>
+                    <img src={item.profile || profile} alt="default grey profile" className="profile-pic"/><br/> 
+                    {item.id}: {item.name}
+                    </li>)
             })}
         </ul>
 
@@ -70,7 +73,9 @@ const Users = () => {
                     <label>ID </label>
                     <input className="box" type="text" id="add-ID" name="ID" value={values.ID} onChange={handleInput}/><br/>
                     <label>Email</label>
-                    <input className="box" type="text" id="add-email" name="email" value={values.email} onChange={handleInput}/>
+                    <input className="box" type="text" id="add-email" name="email" value={values.email} onChange={handleInput}/><br/>
+                    <label>Profile Picture</label>
+                    <input className="box" type="text" id="add-pic" name="profile" value={values.profile} onChange={handleInput}/>
                 </fieldset>
                 <input type="submit" value="Add" />
             </form>

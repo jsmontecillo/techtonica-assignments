@@ -17,8 +17,11 @@ const reducer = (state, action) => {
       case 'editDate':
         return { ...state, date: action.payload };
 
-        case 'editID':
-          return { ...state, id: action.payload };
+      case 'editID':
+        return { ...state, id: action.payload };
+
+      case 'editImage':
+        return {...state, image: action.payload};
   
       default:
         return state;
@@ -32,10 +35,10 @@ const Events = () => {
         name: '',
         date: null,
         description: '',
-        category: ''
+        category: '',
+        image: ''
     };
     const [events, setEvents] = useState([]);
-    const [searchedData, setSearchedData] = useState("");
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const getEvents = async () => {
@@ -50,7 +53,7 @@ const Events = () => {
 
     const onSubmit = async (e) => {
       e.preventDefault();
-      const newEvent = {id: state.id, name: state.name, date: state.date, description: state.description, category: state.category};
+      const newEvent = {id: state.id, name: state.name, date: state.date, description: state.description, category: state.category, image: state.image};
       const response = await fetch('http://localhost:4000/events', {
           method: 'POST',
           headers: {
@@ -64,7 +67,7 @@ const Events = () => {
     }
 
     const handleDelete = async (ID) => {
-      let response = await fetch(`http://localhost:4000/users/${ID}`, {method: "DELETE"})
+      let response = await fetch(`http://localhost:4000/events/${ID}`, {method: "DELETE"})
       await response.json();
       let deleteEvent = events.filter((eve) => eve.id !== Number(ID));
       setEvents(deleteEvent);
@@ -78,7 +81,7 @@ const Events = () => {
               <ul id="events-list">
               {events.map((item, index) => {
                 return (<div>
-                  <li key={index}>{item.name}: {item.date}</li>
+                  <li key={index}><img src={item.image || ""} alt="event image" style={{height: "100px"}}/><br/>{item.name}:<br/> {item.date}</li>
                   </div>)
               })}
               </ul>
@@ -131,6 +134,18 @@ const Events = () => {
                      onChange={(e) =>
                        dispatch({
                            type: 'editCategory',
+                           payload: e.target.value
+                         })}
+                  />
+                  <label>Image</label>
+                  <input
+                  className="box"
+                    type="text"
+                    id="add-event-image"
+                     value={state.image || ""}
+                     onChange={(e) =>
+                       dispatch({
+                           type: 'editImage',
                            payload: e.target.value
                          })}
                   />
