@@ -1,11 +1,12 @@
 import {useState} from 'react';
 
-const DeleteUser = (props) => {
+const DeleteUser = ({deleteUser}) => {
     const [ID, setID] = useState("");
-    const handleSubmit = (e) => {
+    
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        props.delete(ID);
-        setID("");
+        deleteUser(ID);
+        setID('');
     }
     return (
         <div>
@@ -13,7 +14,7 @@ const DeleteUser = (props) => {
         <form id="delete-user" action="#" onSubmit={handleSubmit}>
             <fieldset>
                 <label>User ID</label>
-                <input type="text" id="delete-user-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
+                <input className="box" type="number" id="delete-user-id" value={ID} onChange={(e)=>{setID(e.target.value)}}/>
              </fieldset>
             <input type="submit" />
         </form>

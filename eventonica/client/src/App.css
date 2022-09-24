@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
+body {
+  background-color: #dcf93c;
+  font-family: 'Courier New', Courier, monospace;
+}
 fieldset {
   border: none;
   margin: 1rem 0;
 }
 
 header {
-  /* For more about flexbox, see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   display: flex;
   align-items: center;
 }
@@ -27,4 +33,64 @@ footer {
   margin-top: 1rem;
   font-size: small;
   color: gray;
+}
+
+label{
+  display: inline-block;
+  clear: left;
+  width: 100px;
+  text-align: right;
+}
+
+h2, h3 {
+  color: #7c7cd7;
+  text-shadow: 1px 1px #4444dd;
+}
+
+.box {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+.users {
+  background-color:aliceblue;
+  padding: 10px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  border: 1px solid #dcf93c;
+}
+
+
+.events {
+  background-color: #f4d9e4;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.event-info {
+  text-align: center;
+}
+
+.event-card {
+  background-color: white;
+  padding: 10px;
+  height: 350px;
+  border-radius: 6px;
+  border: 2px solid #dcf93c;
+  margin: 5px;
+}
+
+.search-toolbar {
+  width: 100%;
+  margin-left: -5px;
+  background-color:antiquewhite;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.user-management {
+  text-align: center;
 }

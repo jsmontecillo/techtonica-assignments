@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.nav {
+    background: linear-gradient(127deg, #dcf93c, #f9c4d8, #4444dd);
+    background-size: 150% 150%;
+
+    -webkit-animation: AnimationName 5s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+    background-color: #f4b4cd;
+    font-family: 'Righteous', cursive;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+@-webkit-keyframes AnimationName {
+0%{background-position:68% 0%}
+50%{background-position:33% 100%}
+100%{background-position:68% 0%}
+}
+@-moz-keyframes AnimationName {
+0%{background-position:68% 0%}
+50%{background-position:33% 100%}
+100%{background-position:68% 0%}
+}
+@keyframes AnimationName {
+0%{background-position:68% 0%}
+50%{background-position:33% 100%}
+100%{background-position:68% 0%}
+}
+h1 {
+    font-size: 50px;
+    color: #dcf93c;
+    text-shadow: 3px 1px #4444dd;
+}
+
+img {
+    height: 64px;
+    margin-right: 1em;
+}
+
+li {
+    display: inline;
+    padding: 20px;
+
+}
+
+ul {
+    display: flex;
+    justify-content: center; 
+}

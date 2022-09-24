@@ -19,23 +19,24 @@ router.get('/', async function (req, res, next) {
   /* post request goes here */
   /* Add users listing. */
   router.post('/', async (req, res) => {
-    const event = {
-      name: req.body.name,
-      date: req.body.date,
-      description: req.body.description,
-      category: req.body.category
-    };
-    console.log(event);
-    try {
-      const createdEvent = await db.one(
-        'INSERT INTO users(name, date, description, category) VALUES($1, $2, $3, $4) RETURNING *',
-        [event.name, event.date, event.description, event.category]
-      );
-      console.log(createdEvent);
-      res.send(createdEvent);
-    } catch (e) {
-      return res.status(400).json({ e });
-    }
+    const newEvent = {
+        id: req.body.id,
+        name: req.body.name,
+        date: req.body.date,
+        description: req.body.description,
+        category: req.body.category,
+        image: req.body.image
+      };
+      try {
+        const createdEvent = await db.one(
+            'INSERT INTO events(name, date, description, category, image) VALUES($1, $2, $3 , $4, $5) RETURNING *',
+          [newEvent.name, newEvent.date, newEvent.description, newEvent.category, newEvent.image]
+        );
+        console.log(createdEvent);
+        res.send(createdEvent);
+      } catch (e) {
+        return res.status(400).json({ e });
+      }
   });
 
 
