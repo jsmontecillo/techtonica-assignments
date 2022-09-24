@@ -42,6 +42,11 @@ label{
   text-align: right;
 }
 
+h2, h3 {
+  color: #7c7cd7;
+  text-shadow: 1px 1px #4444dd;
+}
+
 .box {
   display: inline-block;
   width: 100px;
